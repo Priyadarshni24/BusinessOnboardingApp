@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Illustration Image -->
+    <ImageView
+        android:id="@+id/imgOnboard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.55"/>
+
+    <!-- Bottom Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-50dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="6dp"
+        android:padding="24dp"
+
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/imgOnboard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <!-- Title -->
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Quality"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <!-- Description -->
+
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:gravity="center"/>
+
+            <!-- Dots -->
+
+            <LinearLayout
+                android:id="@+id/dotsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <View
+                    android:id="@+id/pageone"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/dot_selected"/>
+
+                <View
+                    android:id="@+id/pagetwo"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/dot_unselected"/>
+
+                <View
+                    android:id="@+id/pagethree"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/dot_unselected"/>
+
+            </LinearLayout>
+
+            <!-- Join Button -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnJoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join the movement!"
+                android:layout_marginTop="24dp"/>
+
+            <!-- Login -->
+
+            <TextView
+                android:id="@+id/btnLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
