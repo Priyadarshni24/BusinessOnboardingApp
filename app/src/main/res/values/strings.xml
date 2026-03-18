@@ -14,6 +14,19 @@
     <string name="sendcode">Send Code</string>
     <string name="phonenumber">Phone Number</string>
     <string name="signup1of4">Signup 1 of 4</string>
+    <string name="signup2of4">Signup 2 of 4</string>
+    <string name="signup3of4">Signup 3 of 4</string>
     <string name="signupwith">or signup with</string>
     <string name="reset_password">Reset Password</string>
+    <string name="farminfo">Farm Info</string>
+    <string name="businessname">Business Name</string>
+    <string name="informalname">Informal Name</string>
+    <string name="streetaddress">Street Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="enterzipcode">Enter Zipcode</string>
+
+
+
+
 </resources>

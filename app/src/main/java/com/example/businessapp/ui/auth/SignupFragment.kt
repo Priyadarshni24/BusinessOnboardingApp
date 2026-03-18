@@ -18,13 +18,13 @@ class SignupFragment : Fragment(R.layout.fragment_signup) {
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentSignupBinding.bind(view)
-        /*binding.txtForgot.setOnClickListener {
+        binding.btncontibue.setOnClickListener {
 
             findNavController().navigate(
                 R.id.action_loginFragment_to_forgotPasswordFragment
             )
 
-        }*/
+        }
 
     }
 
