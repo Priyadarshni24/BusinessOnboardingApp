@@ -25,8 +25,9 @@
     <string name="city">City</string>
     <string name="state">State</string>
     <string name="enterzipcode">Enter Zipcode</string>
-
-
+    <string name="verification">Verification</string>
+    <string name="desccontent">Attached proof of Department of Agriculture registrations i.e. Florida Fresh, USDA Approved, USDA Organic</string>
+    <string name="attach_proof_of_registration">Attach proof of registration</string>
 
 
 </resources>

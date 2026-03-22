@@ -26,7 +26,35 @@
         android:id="@+id/signupFragment"
         android:name="com.example.businessapp.ui.auth.SignupFragment"
         android:label="fragment_signup"
-        tools:layout="@layout/fragment_signup" />
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_signupverificationFragment"
+            app:destination="@id/signupforminfoFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signupverificationFragment"
+        android:name="com.example.businessapp.ui.auth.SignupverificationFragment"
+        android:label="fragment_signupverification"
+        tools:layout="@layout/fragment_signupverification" >
+        <action
+            android:id="@+id/action_signupverificationFragment_to_signupforminfoFragment"
+            app:destination="@id/signupforminfoFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signupforminfoFragment"
+        android:name="com.example.businessapp.ui.auth.SignupforminfoFragment"
+        android:label="fragment_forminfo"
+        tools:layout="@layout/fragment_signupfarminfo" >
+        <action
+            android:id="@+id/action_signupforminfoFragment_to_signupverificationFragment"
+            app:destination="@id/signupverificationFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signuphoursFragment"
+        android:name="com.example.businessapp.ui.auth.SignuphoursFragment"
+        android:label="fragment_timeslotsignup"
+        tools:layout="@layout/fragment_timeslotsignup" />
+
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.businessapp.ui.auth.ForgotPasswordFragment"
@@ -70,4 +98,6 @@
         android:name="com.example.businessapp.ui.success.SuccessFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_success" />
+
+
 </navigation>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Title -->
+    <TextView
+        android:text="FarmerEats"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Signup 4 of 4"
+        android:textColor="@color/gray"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Business Hours"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Choose the hours your farm is open for pickups."
+        android:textColor="@color/gray"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Days -->
+    <LinearLayout
+        android:id="@+id/llDays"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Repeat for all days -->
+        <TextView
+            android:id="@+id/dayMon"
+            style="@style/dayChip"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="M"/>
+
+        <TextView
+            android:id="@+id/dayTue"
+            style="@style/dayChip"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="T"/>
+
+        <TextView
+            android:id="@+id/dayWed"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/dayChipSelected"
+            android:text="W"/>
+
+        <TextView
+            android:id="@+id/dayThu"
+            style="@style/dayChip"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Th"/>
+
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/dayFri"
+            style="@style/dayChip"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="F"/>
+
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/daySat"
+            style="@style/dayChip"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="S"/>
+
+        <TextView
+            android:id="@+id/daySun"
+            style="@style/dayChip"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Su"/>
+
+    </LinearLayout>
+
+    <!-- Time Slots -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupTime"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="false"
+        app:chipSpacing="12dp">
+
+        <com.google.android.material.chip.Chip
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="8:00am - 10:00am"
+            android:textColor="@color/black"
+            style="@style/timeChip"/>
+
+        <com.google.android.material.chip.Chip
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="10:00am - 1:00pm"
+            android:textColor="@color/black"
+            style="@style/timeChip"/>
+
+        <com.google.android.material.chip.Chip
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="1:00pm - 4:00pm"
+            android:textColor="@color/black"
+            style="@style/timeChip"/>
+
+        <com.google.android.material.chip.Chip
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="4:00pm - 7:00pm"
+            android:textColor="@color/black"
+            style="@style/timeChip"/>
+
+        <com.google.android.material.chip.Chip
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="7:00pm - 10:00pm"
+            android:textColor="@color/black"
+            style="@style/timeChip"/>
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- Spacer -->
+    <View
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <!-- Bottom -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_back"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_weight="2"
+            android:text="Signup"
+            android:id="@+id/signup"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@color/orange"
+            app:cornerRadius="28dp"/>
+    </LinearLayout>
+
+</LinearLayout>
