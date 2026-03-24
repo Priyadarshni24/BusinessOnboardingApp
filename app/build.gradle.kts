@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.material.v1110)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.okhttp)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)

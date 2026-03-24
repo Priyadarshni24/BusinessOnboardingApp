@@ -65,8 +65,11 @@ class SignupverificationFragment : Fragment(R.layout.fragment_signupverification
 
             // 👉 Navigate to next fragment
             findNavController().navigate(
-                R.id.action_signupverificationFragment_to_signupforminfoFragment
+                R.id.action_signupverificationFragment_to_signuphoursFragment
             )
+        }
+        binding.imgback.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

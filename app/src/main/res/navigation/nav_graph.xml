@@ -37,8 +37,8 @@
         android:label="fragment_signupverification"
         tools:layout="@layout/fragment_signupverification" >
         <action
-            android:id="@+id/action_signupverificationFragment_to_signupforminfoFragment"
-            app:destination="@id/signupforminfoFragment"/>
+            android:id="@+id/action_signupverificationFragment_to_signuphoursFragment"
+            app:destination="@id/signuphoursFragment"/>
     </fragment>
     <fragment
         android:id="@+id/signupforminfoFragment"

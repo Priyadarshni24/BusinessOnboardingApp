@@ -2,26 +2,28 @@ package com.example.businessapp.ui.auth
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.businessapp.R
-import com.example.businessapp.databinding.FragmentSignupverificationBinding
 import com.example.businessapp.databinding.FragmentTimeslotsignupBinding
 import com.example.businessapp.network.RetrofitClient
 import com.example.businessapp.viewmodel.SignupViewModel
 import kotlinx.coroutines.launch
 import org.json.JSONObject
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.File
 import kotlin.getValue
 import com.google.android.material.chip.Chip
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
 
 class SignuphoursFragment : Fragment(R.layout.fragment_timeslotsignup) {
 
@@ -58,6 +60,9 @@ class SignuphoursFragment : Fragment(R.layout.fragment_timeslotsignup) {
             // ✅ Call API
             registerUser()
         }
+        binding.imgback.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     // ✅ FINAL API CALL
@@ -75,36 +80,37 @@ class SignuphoursFragment : Fragment(R.layout.fragment_timeslotsignup) {
         }.toString()
 
         lifecycleScope.launch {
-
+            Log.e("TAG", "businessHoursJson: $businessHoursJson")
             try {
                 val response = RetrofitClient.api.register(
 
-                    viewModel.full_name.toRequestBody(),
-                    viewModel.email.toRequestBody(),
-                    viewModel.phone.toRequestBody(),
-                    viewModel.password.toRequestBody(),
-                    "farmer".toRequestBody(),
+                    viewModel.full_name.toRequestBodyPart(),
+                    viewModel.email.toRequestBodyPart(),
+                    viewModel.phone.toRequestBodyPart(),
+                    viewModel.password.toRequestBodyPart(),
+                    "farmer".toRequestBodyPart(),
 
-                    viewModel.business_name.toRequestBody(),
-                    viewModel.informal_name.toRequestBody(),
-                    viewModel.address.toRequestBody(),
-                    viewModel.city.toRequestBody(),
-                    viewModel.state.toRequestBody(),
-                    viewModel.zip_code.toRequestBody(),
+                    viewModel.business_name.toRequestBodyPart(),
+                    viewModel.informal_name.toRequestBodyPart(),
+                    viewModel.address.toRequestBodyPart(),
+                    viewModel.city.toRequestBodyPart(),
+                    viewModel.state.toRequestBodyPart(),
+                    viewModel.zip_code.toRequestBodyPart(),
 
                     filePart,
-                    businessHoursJson.toRequestBody(),
+                    businessHoursJson.toRequestBodyPart(),
 
-                    "dummy_token".toRequestBody(),
-                    "email".toRequestBody(),
-                    "".toRequestBody()
+                    "dummy_token".toRequestBodyPart(),
+                    "email".toRequestBodyPart(),
+                    "".toRequestBodyPart()
                 )
-
-                if (response.isSuccessful && response.body()?.success == "true") {
+                Log.e("TAG", "registerUser: $response")
+                if (response.isSuccessful && response.body()?.success == true) {
 
                     Toast.makeText(requireContext(), "Signup Success 🎉", Toast.LENGTH_SHORT).show()
 
                 } else {
+                    Log.e("TAG", "registerUser else: ${response.body()}")
                     Toast.makeText(requireContext(), response.body()?.message ?: "Signup Failed", Toast.LENGTH_SHORT).show()
                 }
 
