@@ -8,6 +8,7 @@ import com.example.businessapp.model.ResetPasswordRequest
 import com.example.businessapp.model.VerifyOtpRequest
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Multipart
@@ -57,6 +58,6 @@ interface ApiService {
         @Part("type") type: RequestBody,
         @Part("social_id") socialId: RequestBody
 
-    ): Response<ForgetPasswordResponse>
+    ): Response<ResponseBody>
 
 }

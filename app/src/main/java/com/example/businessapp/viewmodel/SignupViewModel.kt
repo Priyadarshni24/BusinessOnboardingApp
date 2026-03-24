@@ -24,7 +24,7 @@ class SignupViewModel : ViewModel() {
     var documentUri: Uri? = null
 
     // Step 4
-    var selectedDays: String = ""
-    var selectedHours: List<String> = emptyList()
+    val businessHoursMap = mutableMapOf<String, MutableList<String>>()
+    var selectedDay: String? = null
 
 }

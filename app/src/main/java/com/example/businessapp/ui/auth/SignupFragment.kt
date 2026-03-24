@@ -33,7 +33,7 @@ class SignupFragment : Fragment(R.layout.fragment_signup) {
             binding.reeditPassword.error = "Password does not match"
 
         binding.btncontibue.setOnClickListener {
-
+            viewModel.password = binding.editPassword.text.toString()
             findNavController().navigate(R.id.action_signupFragment_to_signupverificationFragment)
         }
 

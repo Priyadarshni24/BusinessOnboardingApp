@@ -57,6 +57,7 @@ class SignupforminfoFragment : Fragment(R.layout.fragment_signupfarminfo) {
                 binding.etZipcode.error = "Enter valid zipcode"
                 return@setOnClickListener
             }
+            viewModel.state = binding.etState.text.toString()
                 findNavController().navigate(R.id.action_signupforminfoFragment_to_signupverificationFragment)
         }
         binding.imgback.setOnClickListener {
